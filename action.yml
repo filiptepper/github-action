@@ -1,0 +1,23 @@
+name: 'TFLint'
+description: 'Runs tflint, Terraform Linter'
+
+# inputs:
+#   who-to-greet:  # id of input
+#     description: 'Who to greet'
+#     required: true
+#     default: 'World'
+
+runs:
+  using: 'composite'
+  steps:
+    - run: ./exec/wrapper-terraform-fmt.sh
+      shell: bash
+
+# runs:
+#   using: 'composite'
+#   image: 'Dockerfile'
+#   args:
+#     - ${{ inputs.who-to-greet }}
+
+# - name: terraform fmt
+#   run: .github/scripts/wrapper-terraform-fmt.sh
