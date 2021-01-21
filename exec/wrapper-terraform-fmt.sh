@@ -9,5 +9,6 @@ while IFS= read -r FILE; do
 done < _TERRAFORM_LIST
 
 cat _TERRAFORM_DIFF
+ls -la _TERRAFORM_DIFF
 
 reviewdog -f=diff -reporter=github-pr-review < _TERRAFORM_DIFF
