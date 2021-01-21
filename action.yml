@@ -10,7 +10,7 @@ description: 'Runs tflint, Terraform Linter'
 runs:
   using: 'composite'
   steps:
-    - run: ./exec/wrapper-terraform-fmt.sh
+    - run: $GITHUB_ACTION_PATH/exec/wrapper-terraform-fmt.sh
       shell: bash
 
 # runs:
