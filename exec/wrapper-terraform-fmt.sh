@@ -8,7 +8,7 @@ while IFS= read -r FILE; do
   echo "diff $DIFF" >> _TERRAFORM_DIFF
 done < _TERRAFORM_LIST
 
-cat _TERRAFORM_DIFF
-ls -la _TERRAFORM_DIFF
-
-reviewdog -f=diff -reporter=github-pr-review < _TERRAFORM_DIFF
+if [[ -f "_TERRAFORM_DIFF" ]]; then
+  reviewdog -f=diff -reporter=github-pr-review < _TERRAFORM_DIFF
+  exit 1
+fi
